@@ -6,5 +6,8 @@ const tracks = [
 module.exports = {
     find: () => {
         return [...tracks]
+    },
+    findById: (id) => {
+        return tracks.find(track => track.id === id)
     }
 }
