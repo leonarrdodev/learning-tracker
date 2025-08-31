@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilhas de estudo</title>
+</head>
+<body>
+    <h1>Minhas trilhas de estudo</h1>
+     <% if (tracks && tracks.length > 0) { %> 
+        <ul> <% tracks.forEach(track => { %>
+                <li>
+                    <strong><%= track.title %></strong>
+                    <p><%= track.description %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Nenhuma track encontrada</p>
+    <% } %>
+</body>
+</html>
