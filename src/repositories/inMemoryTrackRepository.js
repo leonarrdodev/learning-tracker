@@ -9,5 +9,10 @@ module.exports = {
     },
     findById: (id) => {
         return tracks.find(track => track.id === id)
+    },
+    create: (data) => {
+        const track = new Track(data.title, data.description, data.category)
+        tracks.push(track)
+        return track
     }
 }

@@ -10,10 +10,10 @@ app.use((req, res, next) => {
   res.locals.ptBR = ptBR
   next();
 });
+app.use(express.urlencoded({ extended: true }));
 app.use('/tracks', trackRoutes)
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public'))); 
 
 module.exports = app;
