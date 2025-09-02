@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar trilha</title>
+</head>
+<body>
+    <h1>Editar trilha</h1>
+    <form action="/tracks/<%= track.id %>/update" method="POST">
+        <input type="text" name="title" value="<%= track.title %>"/>
+        <textarea name="description"><%= track.description %></textarea>
+        <input type="text" name="category" value="<%= track.category %>"/>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

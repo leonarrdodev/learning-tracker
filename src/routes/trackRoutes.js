@@ -14,4 +14,14 @@ router.get('/:id', trackController.getTrackById)
 
 //Rota para criar uma track
 router.post('/', trackController.createTrack)
+
+
+//Mostrar formulario
+router.get('/:id/edit', trackController.showEditForm)
+
+//Atualizar track
+router.post('/:id/update', trackController.updateTrack)
+
+
+
 module.exports = router

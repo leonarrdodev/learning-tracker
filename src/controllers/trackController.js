@@ -24,27 +24,49 @@ module.exports = {
         }
     },
 
-    // CORREÇÃO: Removida a barra inicial
+   
     showCreateForm: (req, res) => {
         res.render('tracks/new');
     },
 
-    // CORREÇÃO: Nome da função e lógica interna
+
     createTrack: (req, res) => {
     try {
         const newTrack = inMemoryTrackRepository.create(req.body);
 
-        // ---- ADICIONE AS LINHAS DE DEPURAÇÃO AQUI ----
-        console.log('--- DADOS DA NOVA TRILHA ---');
-        console.log(newTrack);
-        console.log('ID para redirecionar:', newTrack.id);
-        // ---------------------------------------------
-
+   
         res.redirect(`/tracks/${newTrack.id}`);
     } catch (err) {
-        console.error('--- ERRO AO CRIAR TRACK ---');
-        console.error(err); 
         res.status(400).render('tracks/new', { error: err.message });
+        }
+    },
+
+    showEditForm: (req, res) => {
+        try{
+            const {id} = req.params
+            const track = inMemoryTrackRepository.findById(id)
+            if(track){
+                res.render('tracks/edit', {track})
+            } else {
+            res.status(404).send('Trilha não encontrada para edição');
+        }
+        } catch(err){
+            res.status(404).render('tracks/edit', {error: err.message})
+        }
+        
+    },
+
+    updateTrack: (req, res) => {
+        try{
+            const {id} = req.params
+            inMemoryTrackRepository.update(id, req.body)
+            res.redirect(`/tracks/${id}`)
+
+        } catch(err){
+            console.error('Erro ao atualizar a trilha:', err);
+            res.status(500).send('Ocorreu um erro ao atualizar a trilha.');
+        }
+        
+
     }
-}
 };
