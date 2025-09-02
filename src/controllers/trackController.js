@@ -66,7 +66,16 @@ module.exports = {
             console.error('Erro ao atualizar a trilha:', err);
             res.status(500).send('Ocorreu um erro ao atualizar a trilha.');
         }
-        
+    },
 
+    deleteTrack: (req, res) => {
+        try{
+            const {id} = req.params
+            inMemoryTrackRepository.remove(id)
+            res.redirect('/tracks')
+        } catch(err){
+            console.error('Erro ao atualizar a trilha:', err);
+            res.status(500).send('Ocorreu um erro ao deletar a trilha.');
+        }
     }
 };

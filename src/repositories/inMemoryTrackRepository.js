@@ -24,5 +24,12 @@ module.exports = {
         track.description = data.description ?? track.description
         track.category = data.category ?? track.category
         return track
+    },
+
+    remove: (id) => {
+        const track = tracks.find(track => track.id === id)
+        if(track !== -1){
+            tracks.splice(track, 1)
+        }
     }
 }

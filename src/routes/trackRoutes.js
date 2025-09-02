@@ -23,5 +23,8 @@ router.get('/:id/edit', trackController.showEditForm)
 router.post('/:id/update', trackController.updateTrack)
 
 
+//deletar track
+router.post('/:id/delete', trackController.deleteTrack)
+
 
 module.exports = router

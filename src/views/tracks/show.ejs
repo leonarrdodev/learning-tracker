@@ -13,6 +13,9 @@
     <p><%= track.description %></p>
     <p>Categoria: <%= track.category %></p>
     <a href="/tracks/<%= track.id %>/edit">Editar</a>
+    <form action="/tracks/:<%= track.id%>/delete" method="POST">
+        <button type="submit" onclick="return confirm('Tem certeza que deseja deletar esta trilha?')">Deletar</button>
+    </form>
     <a href="/tracks">Voltar para a lista</a>
 
 
