@@ -18,7 +18,21 @@
     </form>
     <a href="/tracks">Voltar para a lista</a>
 
+    <% if (tasks && tasks.length > 0) { %> 
+        <ul> <% tracks.forEach(tasks => { %>
+                <li>
+                    <strong><%= track.title %></strong>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Nenhuma task encontrada</p>
+    <% } %>
 
 
+    <form action="/tracks/<%=track.id%>/tasks" method="POST">
+        <input type="text" name="title" placeholder="Nova tarefa" required>
+        <button type="submit">Adicionar</button>
+    </form>
 </body>
 </html>

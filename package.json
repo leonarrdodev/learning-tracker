@@ -1,7 +1,6 @@
 {
   "name": "learning-tracker",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^4.1.0",
-    "dotenv": "^17.2.1",
+    "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "mongoose": "^8.18.0"
@@ -27,5 +26,14 @@
     "globals": "^16.3.0",
     "nodemon": "^3.1.10",
     "prettier": "^3.6.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonarrdodev/learning-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leonarrdodev/learning-tracker/issues"
+  },
+  "homepage": "https://github.com/leonarrdodev/learning-tracker#readme",
+  "description": ""
 }

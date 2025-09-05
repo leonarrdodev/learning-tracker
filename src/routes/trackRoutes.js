@@ -27,4 +27,7 @@ router.post('/:id/update', trackController.updateTrack)
 router.post('/:id/delete', trackController.deleteTrack)
 
 
+//Criar nova task
+router.post('/:trackId/tasks', trackController.createTask)
+
 module.exports = router

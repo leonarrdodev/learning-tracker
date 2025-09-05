@@ -1,4 +1,5 @@
 const inMemoryTrackRepository = require('../repositories/inMemoryTrackRepository');
+const inMemoryTraskRepository = require('../repositories/inMemoryTaskRepository')
 
 module.exports = {
     getAllTracks: (req, res) => {
@@ -14,8 +15,9 @@ module.exports = {
         try {
             const { id } = req.params;
             const track = inMemoryTrackRepository.findById(id);
+            const tasks = inMemoryTraskRepository.findByTrackId(id)
             if (track) {
-                res.render('tracks/show', { track });
+                res.render('tracks/show', { track, tasks });
             } else {
                 res.status(404).send('Trilha não encontrada');
             }
@@ -38,6 +40,16 @@ module.exports = {
         res.redirect(`/tracks/${newTrack.id}`);
     } catch (err) {
         res.status(400).render('tracks/new', { error: err.message });
+        }
+    },
+
+    createTask: (req, res) => {
+        try{
+            const {trackId} = req.params
+            inMemoryTraskRepository.create({title: req.body.title, trackId: trackId})
+            res.redirect(`/tracks/${trackId}`)
+        } catch(err) {
+            res.status(400).render(`tracks/${trackId}`)
         }
     },
 
@@ -77,5 +89,7 @@ module.exports = {
             console.error('Erro ao atualizar a trilha:', err);
             res.status(500).send('Ocorreu um erro ao deletar a trilha.');
         }
-    }
+    },
+
+    
 };
