@@ -37,7 +37,7 @@ module.exports = {
         const newTrack = inMemoryTrackRepository.create(req.body);
 
    
-        res.redirect(`/tracks/${newTrack.id}`);
+        res.redirect(`/tracks/${trackId}`);
     } catch (err) {
         res.status(400).render('tracks/new', { error: err.message });
         }
