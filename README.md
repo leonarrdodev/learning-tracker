@@ -1,10 +1,10 @@
-# 📚 Learning Tracker
+# Learning Tracker
 
 O **Learning Tracker** é uma aplicação web desenvolvida para ajudar estudantes e desenvolvedores a organizarem seus estudos. O sistema permite criar "Trilhas de Conhecimento" e gerenciar tarefas de aprendizado dentro de cada trilha.
 
 Este projeto foi construído para aplicar conceitos fundamentais de desenvolvimento Backend, como arquitetura **MVC**, padrão **Repository** e renderização dinâmica com **EJS**.
 
-## 🚀 Tecnologias
+## Tecnologias
 
 - **Node.js**
 - **Express.js**
@@ -12,7 +12,7 @@ Este projeto foi construído para aplicar conceitos fundamentais de desenvolvime
 - **JavaScript** (ES6+)
 - **ESLint & Prettier** (Padronização de código)
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
 - **Gerenciamento de Trilhas (CRUD):**
   - Criar novas trilhas de estudo (ex: "Aprender Node.js").
@@ -23,28 +23,28 @@ Este projeto foi construído para aplicar conceitos fundamentais de desenvolvime
   - Adicionar tarefas específicas dentro de uma trilha.
   - Visualização do status das tarefas.
 
-## 🛠️ Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O projeto segue a arquitetura **MVC (Model-View-Controller)** para garantir a separação de responsabilidades:
 
-src/ 
-├── controllers/
-    # Lógica de controle das requisições 
-├── models/ 
-    # Definição das entidades (Track, Task) 
-├── repositories/ # Camada de acesso a dados (In-Memory) 
-├── routes/ # Definição das rotas da API 
-├── views/ # Templates EJS para o Frontend 
-└── server.js # Ponto de entrada da aplicação
+```text
+src/
+├── controllers/    # Lógica de controle das requisições
+├── models/         # Definição das entidades (Track, Task)
+├── repositories/   # Camada de acesso a dados (In-Memory)
+├── routes/         # Definição das rotas da API
+├── views/          # Templates EJS para o Frontend
+└── server.js       # Ponto de entrada da aplicação
+````
 
 
-## 🔧 Como rodar o projeto
+## Como rodar o projeto
 
 ### Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git], [Node.js].
 
-### 🎲 Rodando a aplicação
+### Rodando a aplicação
 
 ```bash
 # Clone este repositório
@@ -63,5 +63,5 @@ $ npm install
 $ npm run dev
 
 # O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
-📝 Autor
+Autor
 Desenvolvido por Leo.
