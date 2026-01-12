@@ -19,9 +19,9 @@
     <a href="/tracks">Voltar para a lista</a>
 
     <% if (tasks && tasks.length > 0) { %> 
-        <ul> <% tracks.forEach(tasks => { %>
+        <ul> <% tasks.forEach(tasks => { %>
                 <li>
-                    <strong><%= track.title %></strong>
+                    <strong><%= tasks.title %></strong>
                 </li>
             <% }) %>
         </ul>
