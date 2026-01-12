@@ -63,5 +63,6 @@ $ npm install
 $ npm run dev
 
 # O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
-Autor
+````
+
 Desenvolvido por Leo.
